@@ -7,7 +7,7 @@
 运行容器
 
 ```
-docker run -d --name sampleweb-java-maven -p 8080:8080 \
+docker run -d --name guessinggame -p 8080:8080 \
 registry.cn-shenzhen.aliyuncs.com/cnmirror/guessinggame-spring-boot:v1.0
 ```
 
