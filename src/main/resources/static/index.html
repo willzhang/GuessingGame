@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜数游戏</title>
+</head>
+<body>
+<h1>猜数游戏</h1>
+<p>请输入1到100之间的一个数字：</p>
+<input type="number" id="guessInput" min="1" max="100">
+<button onclick="makeGuess()">提交</button>
+<button onclick="resetGame()">重置游戏</button>
+<p id="result"></p>
+
+<script>
+    // 提交猜测
+    function makeGuess() {
+        const guessInput = document.getElementById("guessInput").value;
+        fetch(`/game/guess?number=${guessInput}`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("result").innerText = data;
+            });
+    }
+
+    // 重置游戏
+    function resetGame() {
+        fetch("/game/reset", { method: "POST" })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("result").innerText = data;
+                document.getElementById("guessInput").value = "";
+            });
+    }
+</script>
+</body>
+</html>
