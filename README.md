@@ -1,6 +1,6 @@
 # GuessingGame
 
-介绍：基于java spring-boot块实现简单的猜数字游戏，并使用maven进行构建。
+介绍：基于java spring-boot实现简单的猜数字游戏，并使用maven进行构建。
 
 ## 快速入门
 
